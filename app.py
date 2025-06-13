@@ -736,4 +736,3 @@ async def health_check():
             content={"status": "unhealthy", "error": str(e), "api_key_set": bool(API_KEY)}
         )
 
-app = FastAPI(title="RAG Query API", description="API for querying the RAG knowledge base")
