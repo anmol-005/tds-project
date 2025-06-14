@@ -28,6 +28,8 @@ MAX_RESULTS = 10  # Increased to get more context
 load_dotenv()
 MAX_CONTEXT_CHUNKS = 4  # Increased number of chunks per source
 API_KEY = os.getenv("OPENAI_API_KEY")  # Get API key from environment variable
+if not API_KEY.startswith("Bearer "):
+    API_KEY = f"Bearer {API_KEY}"
 
 # FastAPI app instance
 app = FastAPI(title="RAG Query API", description="API for querying the RAG knowledge base")
