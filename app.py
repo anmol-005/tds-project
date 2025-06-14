@@ -32,6 +32,10 @@ API_KEY = os.getenv("API_KEY")  # Get API key from environment variable
 # FastAPI app instance
 app = FastAPI(title="RAG Query API", description="API for querying the RAG knowledge base")
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello from FastAPI"}
+
 # Models
 class QueryRequest(BaseModel):
     question: str
