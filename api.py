@@ -17,7 +17,7 @@ import uvicorn
 import traceback
 from dotenv import load_dotenv
 
-'''# Configure logging
+# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -27,19 +27,10 @@ SIMILARITY_THRESHOLD = 0.68  # Lowered threshold for better recall
 MAX_RESULTS = 10  # Increased to get more context
 load_dotenv()
 MAX_CONTEXT_CHUNKS = 4  # Increased number of chunks per source
-API_KEY = os.getenv("API_KEY")  # Get API key from environment variable'''
+API_KEY = os.getenv("API_KEY")  # Get API key from environment variable
 
 # FastAPI app instance
 app = FastAPI(title="RAG Query API", description="API for querying the RAG knowledge base")
-
-# Enable CORS
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Models
 class QueryRequest(BaseModel):
